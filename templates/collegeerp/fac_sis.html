@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information - Faculty Login</title>
+    <link rel="stylesheet" href="/static/collegeerp/fac_sis.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="/static/collegeerp/images/user.png" class="user-img">
+                <div>
+                    <h2>{{fac.fname}} {{fac.lname}}</h2>
+                    <p>Faculty</p>
+                </div>
+            </div>
+            <ul>
+                <li><img src="/static/collegeerp/images/dashboard.png"><p><a href="/fac_sis"></a>Dashboard</p></li>
+                <li><img src="/static/collegeerp/images/student.png"><p>Student Information</p></li>
+                <li><img src="/static/collegeerp/images/attendance.png"><p><a href="/attendance">Attendance</a></p></li>
+                <li><img src="/static/collegeerp/images/report_card.png"><p>Academic Performance</p></li>
+                <li><img src="/static/collegeerp/images/course.png"><p>Course Information</p></li>
+                <li><img src="/static/collegeerp/images/notification.png"><p>Notifications</p></li>
+            </ul>
+            <ul>
+                <li><img src="/static/collegeerp/images/logout.png"><p>Logout</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Course Information Page-->
+
+    <div class="container">
+        <div class="title">Timetable</div>
+        <p>Make changes to the Timetable</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class='details'><label for="time">Time:</label></span>
+                    <input type="text" id="time" name="time" required value="{{ timetable.timing }}" placeholder="Enter Time"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="monday">Monday:</label></span>
+                    <input type="text" id="monday" name="monday" value="{{ timetable.monday }}" placeholder="Enter Course ID"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="tuesday">Tuesday:</label></span>
+                    <input type="text" id="tuesday" name="tuesday" value="{{ timetable.tuesday }}" placeholder="Enter Course ID"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="wednesday">Wednesday:</label></span>
+                    <input type="text" id="wednesday" name="wednesday" value="{{ timetable.wednesday }}" placeholder="Enter Course ID"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="thursday">Thursday:</label></span>
+                    <input type="text" id="thursday" name="thursday" value="{{ timetable.thursday }}" placeholder="Enter Course ID"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="friday">Friday:</label></span>
+                    <input type="text" id="friday" name="friday" value="{{ timetable.friday }}" placeholder="Enter Course ID"><br>
+                </div>
+                <button type="submit" formaction="/timetable/add">Add</button>
+                <button type="submit" formaction="/timetable/delete/">Delete</button>
+                <button type="submit" formaction="/timetable/update/">Update</button>
+                <button type="submit" formaction="/timetable/search/">Search</button>
+            </div>
+        </form>
+
+        <div class="title">Achievements</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class='details'><label for="id">ID:</label></span>
+                    <input type="text" id="id" name="id" required value="{{ach.id}}" placeholder="Enter ID Number">
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="regno">Registration Number:</label></span>
+                    <input type="text" id="regno" name="regno" value="{{sis_va}}" placeholder="Enter Registration Number">
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="achievement">Achievement:</label></span>
+                    <input type='text' id="achievement" name="achievement" value="{{ach.achievement}}" placeholder="Enter Achievement">
+                </div>
+                <div class="input-box">
+                    <span class="details"><label for="category">Category:</label></span>
+                    <input type="text" id="category" name="category" value="{{ach.category}}" placeholder="Enter Category"><br>
+                </div>
+                <button type="submit" formaction="/achievement/add">Add</button>
+                <button type="submit" formaction="/achievement/delete/">Delete</button>
+                <button type="submit" formaction="/achievement/update/">Update</button>
+                <button type="submit" formaction="/achievement/search/">Search</button>
+            </div>
+        </form>
+
+        <div class="title">Attendance</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <span class='details'><label for="id">ID:</label></span>
+                    <input type="text" id="id" name="id" required value="{{course_att.id}}" placeholder="Enter ID Number"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="course">Course:</label></span>
+                    <input type="text" id="course" name="course" value="{{co_val}}" placeholder="Enter Course"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="faculty">Faculty:</label></span>
+                    <input type="text" id="faculty" name="faculty" value="{{fac_val}}" placeholder="Enter Faculty"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="branch">Branch:</label></span>
+                    <input type="text" id="branch" name="branch" value="{{course_att.branch}}" placeholder="Enter Branch"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="section">Section:</label></span>
+                    <input type="text" id="section" name="section" value="{{course_att.section}}" placeholder="Enter Section"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="attendance_date">Date:</label></span>
+                    <input type="text" id="attendance_date" name="attendance_date" value="{{attendance_date}}" placeholder="Enter Attendance Date"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="regno">Registration Number:</label></span>
+                    <input type="text" id="regno" name="regno" value="{{sis_val}}" placeholder="Enter Registration Number"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="status">Status:</label></span>
+                    <input type="text" id="status" name="status" value="{{att_status.status}}" placeholder="Enter Status"><br>
+                </div>
+                <button type="submit" formaction="/attendance/add">Add</button>
+                <button type="submit" formaction="/attendance/delete/">Delete</button>
+                <button type="submit" formaction="/attendance/update/">Update</button>
+                <button type="submit" formaction="/attendance/search/">Search</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

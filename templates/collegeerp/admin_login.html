@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en", dir="'ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login Page</title>
+    <link rel="stylesheet" href="/static/collegeerp/login.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Admin Login</h1>
+        <form method="POST" action='#'>
+        {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" id = 'aemail' name="aemail" required>
+                <span></span>
+                <label>Admin Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="apswd" name="apswd" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="pass"><a href="/admin_forpass">Forgot Password?</a></div>
+            <p> </p>
+            <input type="submit" value="Login">
+            <div class="login">
+                Not an Admin? <a href="/slogin">Student Login</a>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

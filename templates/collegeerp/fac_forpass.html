@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en", dir="'ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Reset Password</title>
+    <link rel="stylesheet" href="/static/collegeerp/login.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Faculty Reset Password</h1>
+        <form method="POST" action="#">
+        {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" id = 'femail' name="femail" required>
+                <span></span>
+                <label>Faculty Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id = 'ofpswd' name="ofpswd" required>
+                <span></span>
+                <label>Old Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id = 'fpswd' name="fpswd" required>
+                <span></span>
+                <label>New Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id = 'fpswd1' name="fpswd1" required>
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <!--
+            <div class="pass">Back To Login</div> -->
+            <input type="submit" value="Confirm">
+            <div class="login">
+                <p>  </p>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

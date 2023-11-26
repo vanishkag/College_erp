@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="/static/collegeerp/stu_sis.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="static/collegeerp/images/user.png" class="user-img">
+                <div>
+                    <h2>{{students.fname}} {{students.lname}}</h2>
+                    <p>Student</p>
+                </div>
+            </div>
+            <ul>
+                <li><img src="static/collegeerp/images/dashboard.png"><p>Dashboard</p></li>
+                <li><img src="static/collegeerp/images/student.png"><p>Student Information</p></li>
+                <li><img src="static/collegeerp/images/report_card.png"><p>Academic Performance</p></li>
+                <li><img src="static/collegeerp/images/course.png"><p>Course Information</p></li>
+                <li><img src="static/collegeerp/images/notification.png"><p>Notifications</p></li>
+            </ul>
+            <ul>
+                <li><img src="static/collegeerp/images/logout.png"><p>Logout</p></li>
+            </ul>
+        </div>
+    </div>
+    <h1>Student Information</h1>
+
+    <div class="section">
+        <div class="section-header">Personal Details</div>
+        <div class="section-content">
+            <div class="card">
+                <div class="card-title">Name</div>
+                <div class="card-content">{{students.fname}} {{students.lname}}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Registration Number</div>
+                <div class="card-content">{{students.regno}}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Branch</div>
+                <div class="card-content">{{students.branch}}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Section</div>
+                <div class="card-content">{{students.section}}</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Year</div>
+                <div class="card-content">{{students.year}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Attendance</div>
+        <div class="section-content">
+            <table class="table">
+                <tr>
+                    <th>Course</th>
+                    <th>Percentage</th>
+                </tr>
+                {% for a in attendance %}
+                <tr>
+                    <td>{{a.course_name}}</td>
+                    <td>{{a.percentage}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Timetable</div>
+        <div class="section-content">
+            <table class="table">
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+                {% for t in timetable %}
+                <tr>
+                    <td>{{t.timing}}</td>
+                    <td>{{t.monday}}</td>
+                    <td>{{t.tuesday}}</td>
+                    <td>{{t.wednesday}}</td>
+                    <td>{{t.thursday}}</td>
+                    <td>{{t.friday}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Achievements</div>
+        <div class="section-content">
+            <table class="table">
+                <tr>
+                    <th>Category</th>
+                    <th>Achievement</th>
+                </tr>
+                {% for a in achievements %}
+                <tr>
+                    <td>{{a.category}}</td>
+                    <td>{{a.achievement}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

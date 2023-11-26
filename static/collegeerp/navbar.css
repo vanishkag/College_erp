@@ -1,0 +1,128 @@
+/*NAVBAR CSS STARTS FROM HERE*/
+
+.side-nav{
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.user div{
+    display: none;
+}
+
+.user h2{
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.user-img{
+    width: 40px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+ul{
+    list-style: none;
+    padding: 0 15px;
+}
+
+ul li{
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+ul li img{
+    width: 20px;
+    margin-right: 0px;
+}
+
+ul li p{
+    white-space: nowrap;
+    display: none;
+}
+
+.side-nav:hover{
+    width: 200px;
+}
+
+.side-nav:hover .user div{
+    display: block;
+}
+
+.side-nav:hover .user{
+    width: 100%;
+}
+
+.side-nav:hover .user{
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.side-nav:hover .user-img{
+    margin: 0;
+}
+
+.side-nav:hover ul li p{
+    display: block;
+}
+
+.side-nav:hover ul li img{
+    margin-right: 10px;
+
+}
+
+.side-nav:hover ul li{
+    justify-content: flex-start;
+}
+
+@media (max-width:284px){
+    .container{
+        max-width: 100%;
+    }
+
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .user-details::-webkit-scrollbar{
+        width: 1px;
+    }
+
+    .side-nav{
+        max-width: 100%;
+    }
+}
+

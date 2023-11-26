@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="/static/collegeerp/fac_sis.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="/static/collegeerp/images/user.png" class="user-img">
+                <div>
+                    <h2>{{fac.fname}} {{fac.lname}}</h2>
+                    <p>Faculty</p>
+                </div>
+            </div>
+            <ul>
+                <li><img src="/static/collegeerp/images/dashboard.png"><p>Dashboard</p></li>
+                <li><img src="/static/collegeerp/images/student.png"><p>Student Information</p></li>
+                <li><img src="/static/collegeerp/images/attendance.png"><p>Attendance</p></li>
+                <li><img src="/static/collegeerp/images/report_card.png"><p>Academic Performance</p></li>
+                <li><img src="/static/collegeerp/images/course.png"><p>Course Information</p></li>
+                <li><img src="/static/collegeerp/images/notification.png"><p>Notifications</p></li>
+            </ul>
+            <ul>
+                <li><img src="/static/collegeerp/images/logout.png"><p>Logout</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Attendance-->
+    <div class="title">Attendance</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+    
+                <div class="input-box">
+                    <span class='details'><label for="course">Course ID:</label></span>
+                    <input type="text" id="course" name="course" value="{{co_val}}" placeholder="Enter Course"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="branch">Branch:</label></span>
+                    <input type="text" id="branch" name="branch" value="{{course_att.branch}}" placeholder="Enter Branch"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="section">Section:</label></span>
+                    <input type="text" id="section" name="section" value="{{course_att.section}}" placeholder="Enter Section"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="attendance_date">Date:</label></span>
+                    <input type="text" id="attendance_date" name="attendance_date" value="{{attendance_date}}" placeholder="Enter Attendance Date"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="regno">Registration Number:</label></span>
+                    <input type="text" id="regno" name="regno" value="{{sis_val}}" placeholder="Enter Registration Number"><br>
+                </div>
+                <div class="input-box">
+                    <span class='details'><label for="status">Status:</label></span>
+                    <input type="text" id="status" name="status" value="{{att_status.status}}" placeholder="Enter Status"><br>
+                </div>
+                <button type="submit" formaction="/attendance/add">Add</button>
+                <button type="submit" formaction="/attendance/delete/">Delete</button>
+                <button type="submit" formaction="/attendance/update/">Update</button>
+                <button type="submit" formaction="/attendance/search/">Search</button>
+            </div>
+        </form>
+</body>
+</html>

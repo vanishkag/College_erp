@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information - Admin Login</title>
+    <link rel="stylesheet" href="/static/collegeerp/admin_sis.css">
+</head>
+<body>
+    <!--NAVBAR-->
+    <div class="header">
+        <div class="side-nav">
+            <div class="user">
+                <img src="/static/collegeerp/images/user.png" class="user-img">
+                <div>
+                    <h2>{{adm.fname}} {{adm.lname}}</h2>
+                    <p>Admin</p>
+                </div>
+            </div>
+            <ul>
+                <li><img src="/static/collegeerp/images/dashboard.png"><p>Dashboard</p></li>
+                <li><img src="/static/collegeerp/images/student.png"><p>Student Information</p></li>
+                <li><img src="/static/collegeerp/images/report_card.png"><p>Academic Performance</p></li>
+                <li><img src="/static/collegeerp/images/course.png"><p>Course Information</p></li>
+                <li><img src="/static/collegeerp/images/notification.png"><p>Notifications</p></li>
+            </ul>
+            <ul>
+                <li><img src="/static/collegeerp/images/logout.png"><p>Logout</p></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--ADMIN SIS STARTS FROM HERE-->
+    <div class="container">
+
+        <div class="title">Student Personal Details</div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box">
+                    <label for="regno">Registration Number:</label>
+                    <input type="text" id="regno" name="regno" required value="{{ student.regno }}" placeholder="Enter Registration Number"><br>
+                </div>
+                <div class="input-box">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" value="{{ student.fname }}" placeholder="Enter First Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" value="{{ student.lname }}" placeholder="Enter Last Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="scemail">Student College Email:</label>
+                    <input type="email" id="scemail" name="scemail" value="{{ slo.scemail }}" placeholder="Enter College Email"><br>
+                </div>
+                <div class="input-box">
+                    <label for="branch">Branch:</label>
+                    <input type="text" id="branch" name="branch" value="{{ slo.branch }}" placeholder="Enter Branch"><br>
+                </div>
+                <div class="input-box">
+                    <label for="section">Section:</label>
+                    <input type="text" id="section" name="section" value="{{ slo.section }}" placeholder="Enter Section"><br>
+                </div>
+                <div class="input-box">
+                    <label for="year">Year:</label>
+                    <input type="text" id="year" name="year" value="{{ slo.year }}" placeholder="Enter Year of Study"><br>
+                </div>
+                <div class="input-box">
+                    <label for="spswd">Password:</label>
+                    <input type="password" id="spswd" name="spswd" value="{{ slo.spswd }}" placeholder="Password"><br>
+                </div>
+                <div class="input-box">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="text" id="dob" name="dob" value="{{ dob }}" placeholder="Enter DOB"><br>
+                </div>
+                <div class="input-box">
+                    <label for="stu_phone">Student Phone:</label>
+                    <input type="tel" id="stu_phone" name="stu_phone" value="{{ student.stu_phone }}" placeholder="Enter Student's Phone No"><br>
+                </div>
+                <div class="input-box">
+                    <label for="stu_email">Student Personal Email:</label>
+                    <input type="email" id="stu_email" name="stu_email" value="{{ student.stu_email }}" placeholder="Enter Student's Personal Email"><br>
+                </div>
+                <div class="input-box">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" value="{{ student.address }}" placeholder="Enter Student's Residential Address"><br>
+                </div>
+                <div class="input-box">
+                    <label for="father_name">Father's Name:</label>
+                    <input type="text" id="father_name" name="father_name" value="{{ student.father_name }}" placeholder="Enter Father's Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="father_phone">Father's Phone:</label>
+                    <input type="tel" id="father_phone" name="father_phone" value="{{ student.father_phone }}" placeholder="Enter Father's Phone Number"><br>
+                </div>
+                <div class="input-box">
+                    <label for="father_email">Father's Email:</label>
+                    <input type="email" id="father_email" name="father_email" value="{{ student.father_email }}" placeholder="Enter Father's Email"><br>
+                </div>
+                <div class="input-box">
+                    <label for="mother_name">Mother's Name:</label>
+                    <input type="text" id="mother_name" name="mother_name" value="{{ student.mother_name }}" placeholder="Enter Mother's Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="mother_phone">Mother's Phone:</label>
+                    <input type="tel" id="mother_phone" name="mother_phone" value="{{ student.mother_phone }}" placeholder="Enter Mother's Phone Number"><br>
+                </div>
+                <div class="input-box">
+                    <label for="mother_email">Mother's Email:</label>
+                    <input type="email" id="mother_email" name="mother_email" value="{{ student.mother_email }}" placeholder="Enter Mother's Email"><br>
+                </div>
+                <div class="input-box">
+                    <label for="emergency1_name">Emergency Contact 1 Name:</label>
+                    <input type="text" id="emergency1_name" name="emergency1_name" value="{{ student.emergency1_name }}" placeholder="Enter Emergency Contact 1 Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="emergency1_phone">Emergency Contact 1 Phone:</label>
+                    <input type="tel" id="emergency1_phone" name="emergency1_phone" value="{{ student.emergency1_phone }}" placeholder="Enter Emergency Contact 1 Phone No"><br>
+                </div>
+                <div class="input-box">
+                    <label for="emergency2_name">Emergency Contact 2 Name:</label>
+                    <input type="text" id="emergency2_name" name="emergency2_name" value="{{ student.emergency2_name }}" placeholder="Enter Emergency Contact 2 Name"><br>
+                </div>
+                <div class="input-box">
+                    <label for="emergency2_phone">Emergency Contact 2 Phone:</label>
+                    <input type="tel" id="emergency2_phone" name="emergency2_phone" value="{{ student.emergency2_phone }}" placeholder="Enter Emergency Contact 2 Phone No"><br>
+                </div>
+            
+                <button type="submit" formaction="/sis/add">Add</button>
+                <button type="submit" formaction="/sis/delete/">Delete</button>
+                <button type="submit" formaction="/sis/update/">Update</button>
+                <button type="submit" formaction="/sis/search/">Search</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en", dir="'ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login Page</title>
+    <link rel="stylesheet" href="/static/collegeerp/login.css">
+</head>
+<body>
+    <div class="center">
+        <h1>Student Login</h1>
+        <form method="POST" action="#">
+            {% csrf_token %}
+            <div class="txt_field">
+                <input type="text" id = 'scemail' name="scemail" required>
+                <span></span>
+                <label>Student Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" id="spswd" name="spswd" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="pass"><a href="/stu_forpass">Forgot Password?</a></div>
+            <p> </p>
+            <input type="submit" value="Login">
+            <div class="login">
+                Not a Student? <a href="/fac_login">Faculty Login</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

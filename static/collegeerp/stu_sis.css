@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f2e8db;
+    color: #374151;
+}
+  
+h1 {
+    text-align: center;
+    color: #374151;
+    margin-left: 90px
+}
+  
+.section {
+    margin-bottom: 20px;
+    background-color: #f9f2eb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 90px;
+}
+  
+.section-header {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #374151;
+}
+  
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.card {
+    width: calc(20% - 20px);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #e7d6c7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+  
+.card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #374151;
+}
+  
+.card-content {
+    color: #374151;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Add margin-top to create space */
+  margin-bottom: 20px; /* Add margin-bottom to create space */
+}
+
+.table th,
+.table td {
+    border: 1px solid #d6b8a5;
+    padding: 8px;
+    text-align: left;
+}
+  
+.table th {
+    background-color: #e7d6c7;
+}
+  
+.achievement {
+    margin-bottom: 10px;
+}
+  
+.achievement-title {
+    font-weight: bold;
+    color: #374151;
+}
+  
+.achievement-description {
+    margin-top: 5px;
+    color: #7d685e;
+}
+
+/*NAVBAR CSS STARTS FROM HERE*/
+
+.side-nav{
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: width 0.5s;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.user div{
+  display: none;
+}
+
+.user h2{
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.user-img{
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+ul{
+  list-style: none;
+  padding: 0 15px;
+}
+
+ul li{
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+ul li img{
+  width: 20px;
+  margin-right: 0px;
+}
+
+ul li p{
+  white-space: nowrap;
+  display: none;
+}
+
+.side-nav:hover{
+  width: 200px;
+}
+
+.side-nav:hover .user div{
+  display: block;
+}
+
+.side-nav:hover .user{
+  width: 100%;
+}
+
+.side-nav:hover .user{
+  width: 90%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.side-nav:hover .user-img{
+  margin: 0;
+}
+
+.side-nav:hover ul li p{
+  display: block;
+}
+
+.side-nav:hover ul li img{
+  margin-right: 10px;
+
+}
+
+.side-nav:hover ul li{
+  justify-content: flex-start;
+}
+
+
+
+
+
