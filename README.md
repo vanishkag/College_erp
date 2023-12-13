@@ -14,11 +14,11 @@ The College ERP Portal is a comprehensive system designed to manage various aspe
 
 ## Technologies Used
 
-- **Programming Languages**: Python, JavaScript
-- **Frameworks**: Django, React.js (or any front-end framework)
-- **Database**: MySQL, PostgreSQL (or any relational database)
-- **Front-end**: HTML, CSS, JavaScript
-
+- **Programming Languages**: Python
+- **Frameworks**: Django
+- **Database**: MySQL
+- **Front-end**: HTML, CSS
+  
 ## Getting Started
 
 To set up and run the College ERP Portal locally:
